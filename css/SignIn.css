@@ -76,13 +76,6 @@ section h1 {
 .login-btn {
   width: 100%;
   padding: 15px;
-  border-radius: 25px;
-  outline: none;
-  font-weight: bold;
-  cursor: pointer;
-  border: 2px solid transparent;
-  font-size: 1.05em;
-  transition: 0.5s;
 }
 .login-btn:hover {
   background-color: transparent;
