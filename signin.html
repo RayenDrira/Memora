@@ -15,15 +15,16 @@
 </head>
 
 <body>
-    <form action="index.html" method="get" class="form-box">
+    <form action="signin.php" method="POST" class="form-box">
+
         <section>
             <h1>Sign In</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username" id="username_input">
+                <input type="text" placeholder="Username" id="username_input" name="username">
                 <i class="fa-solid fa-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password" id="password_input">
+                <input type="password" placeholder="Password" id="password_input" name="password">
                 <i class="fa-solid fa-lock"></i>
             </div>
             <div class="remember-forgot">
