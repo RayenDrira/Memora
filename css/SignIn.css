@@ -61,7 +61,7 @@ section h1 {
   top: 50%;
   color: #fff;
 }
-.remenber-forgot {
+.remember-forgot {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,14 +69,14 @@ section h1 {
   color: #fff;
   margin-bottom: 25px;
 }
-.remenber-forgot a,
+.remember-forgot a,
 .register-link a {
   color: #fff;
   text-decoration: none;
   transition: 0.5s;
   font-weight: bold;
 }
-.remenber-forgot a:hover,
+.remember-forgot a:hover,
 .register-link a:hover {
   text-decoration: underline;
 }
