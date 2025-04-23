@@ -8,30 +8,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = document.getElementById("password_input").value.trim();
     const remember = document.getElementById("remember_checkbox");
     
-    const specialCharRegex = /[.@\-_/]/;
-    const upperCaseRegex = /[A-Z]/;
-    const lowerCaseRegex = /[a-z]/;
-  
-      if (!specialCharRegex.test(username)||
-      !upperCaseRegex.test(username)
-      ||!lowerCaseRegex.test(username)) {
-        alert("Username must contain at least one special character (.@-/), one uppercase, and one lowercase letter.");
-        e.preventDefault(); //Bloque l'action automatique
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailValue)) {
+        alert("Please enter a valid email address.");
+        e.preventDefault();
         return;
-      }
-      if (password.length < 8) {
+    }
+    if (password.length < 8) {
         alert("Password must be at least 8 characters long.");
         e.preventDefault();
         return;
     }
       
   
-      if (username === "") {
+    if (username === "") {
         alert("please enter your username.");
         e.preventDefault();
         return;
-      }
-      if (password === "") {
+    }
+    if (password === "") {
         alert("please enter your password.");
         e.preventDefault();
         return;

@@ -23,9 +23,21 @@
 </head>
 
 <body>
-    <form action="index.html" method="get" class="form-box">
+    <form action="register.php" method="POST" class="form-box">
         <section>
             <h1>Sign Up</h1>
+            <?php
+            if (isset($_GET['register'])) {
+                if ($_GET['register'] == 'exists') {
+                    echo "<p style='text-align: center;
+                        color: #fff;
+                        margin-bottom: 20px;'>❌This email address is already registered.</p>";
+            } else if ($_GET['register'] == 'fail') {
+                echo "<p style='text-align: center;
+                        color: #fff;
+                        margin-bottom: 20px;'>❌ Registration failed. Try again.</p>";
+            }}
+            ?>
             <div class="name-row">
                 <div class="input-box">
                     <input type="text" id="firstname_input" placeholder="First Name">
@@ -49,7 +61,7 @@
             </div>
             <button type="submit" class="btx-blue-blue">Sign Up</button>
             <div class="register-link">
-                <p>Already have an account? <a href="signin.html">Sign in</a></p>
+                <p>Already have an account? <a href="signin.php">Sign in</a></p>
             </div>
         </section>
     </form>
