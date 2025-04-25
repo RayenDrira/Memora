@@ -27,7 +27,7 @@
             }
             ?>
             <div class="input-box">
-                <input type="text" placeholder="Username" id="username_input" name="username">
+                <input type="text" placeholder="email" id="email_input" name="email">
                 <i class="fa-solid fa-user"></i>
             </div>
             <div class="input-box">

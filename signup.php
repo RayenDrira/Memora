@@ -40,20 +40,20 @@
             ?>
             <div class="name-row">
                 <div class="input-box">
-                    <input type="text" id="firstname_input" placeholder="First Name">
+                    <input type="text" id="firstname_input" placeholder="First Name" name="firstname">
                 </div>
                 <div class="input-box">
-                    <input type="text" id="lastname_input" placeholder="Last Name">
+                    <input type="text" id="lastname_input" placeholder="Last Name" name="lastname">
                 </div>
                 
             </div>
             <div class="input-box">
-                <input type="email" id="email_input" placeholder="Email">
+                <input type="email" id="email_input" placeholder="Email" name="email">
                 <i class="fas fa-envelope"></i>
                 
             </div>
             <div class="input-box">
-                <input type="password" id="password_input" placeholder="Password">
+                <input type="password" id="password_input" placeholder="Password" name="password">
                 <i class="fa-solid fa-lock"></i>
             </div>
             <div class="remenber-forgot">

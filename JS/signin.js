@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".form-box"); //querySelector qui permet de sélectionner un élément HTML dans la page.
     form.addEventListener("submit", function (e) {
         
-    const username = document.getElementById("username_input").value.trim();
+    const email = document.getElementById("email_input").value.trim();
     const password = document.getElementById("password_input").value.trim();
     const remember = document.getElementById("remember_checkbox");
     
@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
       
   
-    if (username === "") {
-        alert("please enter your username.");
+    if (email === "") {
+        alert("please enter your email.");
         e.preventDefault();
         return;
     }
