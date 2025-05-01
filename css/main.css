@@ -165,8 +165,8 @@ header h1 {
   padding: 5 0em;
   max-width: 24em;
   height: 18em;
-  /*border-bottom: #0f2438 solid 3px;*/
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .why-card::after {
   content: "";
@@ -179,6 +179,16 @@ header h1 {
   box-shadow: 0 -4px 15px rgba(0, 255, 255, 0.3); /* soft glow */
   pointer-events: none;
   z-index: 1;
+}
+.why-card:hover {
+  transform: translateY(-5px); /* Move the card up slightly */
+  box-shadow: 0 8px 20px rgba(49, 193, 225, 0.5); /* Add a glowing shadow */
+  background-color: rgba(
+    49,
+    193,
+    225,
+    0.1
+  ); /* Optional: Add a subtle background highlight */
 }
 .why-card img {
   width: 3em;
