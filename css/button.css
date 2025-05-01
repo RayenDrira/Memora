@@ -57,7 +57,7 @@ html {
   font-size: 1.1em;
   text-transform: capitalize;
   border-radius: 100px;
-  color: white;
+  color: #0f2438;
   background-color: #31c1e1;
   border: 2px solid #31c1e1;
   cursor: pointer;
@@ -107,9 +107,26 @@ html {
   height: 60px;
   letter-spacing: 1px;
 }
-.btx-blue-blue {
+
+.create-card .btx-blue,
+.create-card .btx-blue-reverse {
+  font-size: 1.1em;
+  font-weight: 500;
   text-transform: capitalize;
+  width: 200px;
+  height: 45px;
+  letter-spacing: 1px;
+}
+
+#create-2 .btx-blue,
+#create-2 .btx-blue-reverse {
+  cursor: default;
+  height: 2.7em;
+}
+.btx-blue-blue,
+#button-holder-finish .btx-blue-reverse {
   width: 20em;
   height: 3em;
   letter-spacing: 1px;
+  font-weight: 650;
 }

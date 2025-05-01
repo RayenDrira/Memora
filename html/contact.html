@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="..\js\contact.js"></script>
+  <link rel="stylesheet" href="..\css\main.css" />
+  <link rel="stylesheet" href="..\css\contact.css" />
+  <link rel="stylesheet" href="..\css\button.css">
+
+  <title>Contact Us</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <span>
+        <img src="..\img\logo.png" alt="memora logo">
+        <h1>Memora</h1>
+      </span>
+      <span>
+        <a href="index.html">Home</a>
+        <a href="">Browse</a>
+        <a href="create.html">create</a>
+        <a href="contact.html">Contact</a>
+      </span>
+      <span>
+        <button class="btx-blue-reverse" id="login">Login</button>
+        <button class="btx-blue" id="signup">SignUp</button>
+      </span>
+    </nav>
+  </header>
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Us!</span></h2>
+    <div class="container-contact">
+      <form name="form1" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="ae80fd77-91dc-45f7-9f55-5474379144ac">
+        <div class="row">
+          <div class="input-field">
+            <input type="text" placeholder="Full Name" name="fname" required />
+          </div>
+          <div class="input-field">
+            <input type="email" placeholder="Email address" name="email" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field">
+            <input type="number" placeholder="Mobile Number" name="tel" required />
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Email subject" name="sub" required />
+          </div>
+        </div>
+        <div class="textarea-field">
+          <textarea cols="30" rows="10" placeholder="Your Message" required></textarea>
+        </div>
+        <div class="button-holder">
+          <button type="submit" class="btx-blue-blue">SEND</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <div class="flash-image"></div>
+  <footer>
+    <div>
+      <div>
+        <h4>you can find us on</h4>
+        <div><img src="..\img/facebook.png" alt="">
+          <a>Facebook.com</a>
+        </div>
+        <div><img src="..\img/instagram.png" alt="">
+          <a>Instagram.com</a>
+        </div>
+        <div><img src="..\img/mail.png" alt="">
+          <a>email@domaine.com</a>
+        </div>
+      </div>
+      <div class="gap-footer">
+        <h4>Memora</h4>
+        <a href="index.html">Home</a>
+        <a href="">Browse</a>
+        <a href="create.html">Create</a>
+        <a href="contact.html">contact</a>
+      </div>
+      <div class="gap-footer">
+        <h4>Categories</h4>
+        <a>History</a>
+        <a>Dinasaurs</a>
+        <a>Geography</a>
+        <a>Language</a>
+      </div>
+    </div>
+    <p>© 2025 Memora. All rights reserved.</p>
+  </footer>
+
+
+
+</body>
+
+</html>

@@ -18,7 +18,7 @@ body {
 }
 .button-holder {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1.1em;
 }
@@ -83,7 +83,7 @@ header h1 {
 
 /* hero */
 .hero {
-  height: 130vh;
+  height: 110vh;
 }
 .hero-content {
   display: flex;
@@ -218,7 +218,13 @@ header h1 {
 
 /* footer */
 footer {
-  background: linear-gradient(180deg, #091223 1.39%, #0f2438 75.32%);
+  background: linear-gradient(
+    180deg,
+    rgba(9, 18, 35, 0.9) 0%,
+    rgba(15, 36, 56, 0.4) 60%,
+    rgba(15, 36, 56, 0.2) 85%,
+    rgba(15, 36, 56, 0) 100%
+  );
 }
 footer > div {
   display: flex;
