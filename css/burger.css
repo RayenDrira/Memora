@@ -1,0 +1,9 @@
+#toggle-categories:hover path {
+    fill:#31c1e1;
+    transition: 0.7s ease;
+
+}
+#toggle-categories {
+    cursor: pointer;
+
+}

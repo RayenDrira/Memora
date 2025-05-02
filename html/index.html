@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="..\css\main.css">
     <link rel="stylesheet" href="..\css\button.css">
     <link rel="icon" href="..\img\logo.png" type="image/x-icon">
+    <script src="..\js\navigation.js"></script>
 
 </head>
 
@@ -20,8 +21,8 @@
             </span>
             <span>
                 <a href="index.html">Home</a>
-                <a href="">Browse</a>
-                <a href="create.html">create</a>
+                <a href="browse.html">Browse</a>
+                <a href="contact.html">create</a>
                 <a href="contact.html">Contact</a>
             </span>
             <span>
@@ -37,7 +38,7 @@
                 Discover the
                 endless possibilities waiting for you</p>
             <div class="button-holder">
-                <button class="btx-blue" id="browse">GET STARTED</button>
+                <button class="btx-blue" id="get-started">GET STARTED</button>
                 <button class="btx-blue-reverse" id="contact">CONTACT</button>
             </div>
         </div>
@@ -86,27 +87,33 @@
         <h2 class="big-title"><span class="blue">What </span>Can You Learn <span class="blue">!</span></h2>
         <div class="main-content">
             <div class="main-content-row">
-                <button class="btx-blue-blue"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
-                        viewBox="0 0 48 48">
+                <button class="btx-blue-blue" data-category="language">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 48 48">
                         <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
                             <path d="M28 12V4L8 14v28l12-6" />
                             <path fill="currentColor" d="M20 16L40 6v28L20 44z" />
                         </g>
-                    </svg>Language</button>
-                <button class="btx-blue-blue"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
-                        viewBox="0 0 48 48">
+                    </svg>
+                    Language
+                </button>
+                <button class="btx-blue-blue" data-category="history">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 48 48">
                         <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
                             <path d="M28 12V4L8 14v28l12-6" />
                             <path fill="currentColor" d="M20 16L40 6v28L20 44z" />
                         </g>
-                    </svg>History</button>
-                <button class="btx-blue-blue"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
-                        viewBox="0 0 48 48">
+                    </svg>
+                    History
+                </button>
+                <button class="btx-blue-blue" data-category="geography">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 48 48">
                         <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
                             <path d="M28 12V4L8 14v28l12-6" />
                             <path fill="currentColor" d="M20 16L40 6v28L20 44z" />
                         </g>
-                    </svg>Geography</button>
+                    </svg>
+                    Geography
+                </button>
             </div>
             <div class="main-content-row">
                 <button class="btx-blue-blue"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"

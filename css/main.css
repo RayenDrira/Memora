@@ -74,13 +74,17 @@ header button {
   margin: 0 1em 0 0;
 }
 header h1 {
-  margin-right: 2em;
+  /*margin-right: 2em;*/
   font-size: 1.8em;
   background: linear-gradient(94deg, #31c1e1 1.39%, #fff 75.32%);
   background-clip: text;
   color: hsla(0, 0%, 0%, 0);
 }
-
+header #guest-header,header #user-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
 /* hero */
 .hero {
   height: 110vh;
@@ -219,7 +223,7 @@ header h1 {
   gap: 6em;
   text-align: center;
 }
-.main button {
+.main-content-row button {
   display: flex;
   justify-content: flex-start;
   align-items: center;

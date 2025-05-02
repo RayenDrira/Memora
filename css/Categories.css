@@ -9,10 +9,12 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  padding: 1.1em 6em;
+  padding: 2em 6em;
   background-color: transparent;
   border-top: 0.5px solid #0f2438;
-  margin: 0 10px;
+  border-bottom: 0.5px solid #0f2438;
+  margin-bottom: 3em;
+  margin-top: 1em;
 }
 .categories nav {
   width: 100%;
@@ -31,4 +33,24 @@
 .categories a:hover {
   color: #31c1e1;
   transition: 0.8s;
+}
+.flash-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../img/bg-black.png");
+  background-position: top left;
+  background-repeat: repeat;
+  position: fixed;
+  width: 100%;
+  min-height: 150%;
+  z-index: -1;
+}
+.main-content-row svg path{
+  fill:#0f2438;
+  transition:0.8s ease-in-out;
+}
+.main-content-row button:hover svg path{
+  fill:#31c1e1;
+  transition:0.8s ease-in-out;
 }
