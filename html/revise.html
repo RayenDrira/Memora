@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="..\css\button.css">
     <link rel="stylesheet" href="..\css\create.css">
     <link rel="stylesheet" href="..\css\flipper.css">
+    <link rel="stylesheet" href="..\css\custom-input.css">
     <link rel="icon" href="..\img\logo.png" type="image/x-icon">
+    <script src="..\js\navigation.js"></script>
+    <script src="..\js\quiz.js"></script>
     <title>Revise</title>
 </head>
 
@@ -22,7 +25,7 @@
             <span>
                 <a href="index.html">Home</a>
                 <a href="browse.html">Browse</a>
-                <a href="contact.html">create</a>
+                <a href="create.html">create</a>
                 <a href="contact.html">Contact</a>
             </span>
             <span>
@@ -34,7 +37,7 @@
     <div class="revise">
         <h2 class="big-title"><span class="blue">Lets</span> Revise <span class="blue">!</span></h2>
         <div class="revise-holder">
-           
+
             <div class="flip-card">
                 <div class="flip-card-inner" id="flipCard">
                     <div class="flashcard flip-card-front">
@@ -64,13 +67,13 @@
                             <p class="flash-number">01</p>
                         </div>
                         <p class="answer">World War One</p>
-                        <button class="btx-blue"
+                        <button class="btx-blue-reverse"
                             onclick="document.getElementById('flipCard').classList.toggle('flipped')">Flip</button>
                     </div>
                 </div>
             </div>
 
-       
+
         </div>
         <div class="revise-holder-2">
             <button class="btx-blue-reverse">BACK</button>
@@ -92,7 +95,47 @@
             <button class="btx-blue-reverse">QUIZ</button>
         </div>
     </div>
-
+    <div class="container">
+        <form action="" method="POST">
+            <div class="quiz">
+                <h2 class="medium-title"><span class="blue">Quiz </span>Parameters</h2>
+                <div class="quiz-parameter-holder">
+                    <div class="quiz-parameter">
+                        <div>
+                            <input type="radio" name="quiz-level" id="quiz-level-easy" value="easy" checked>
+                            <label for="quiz-level-easy">Easy</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="quiz-level" id="quiz-level-medium" value="medium">
+                            <label for="quiz-level-medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="quiz-level" id="quiz-level-hard" value="hard">
+                            <label for="quiz-level-hard">Hard</label>
+                        </div>
+                    </div>
+                    <div class="quiz-parameter">
+                        <div>
+                            <input type="checkbox" name="quiz-type" id="quiz-type-mc" value="multiple-choice" checked>
+                            <label for="quiz-type-mc">Multiple Choice</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="quiz-type" id="quiz-type-timer" value="timer">
+                            <label for="quiz-type-timer">Timer</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="quiz-type" id="quiz-type-hint" value="hint">
+                            <label for="quiz-type-hint">Hints</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-holder">
+                    <button class="btx-blue" type="submit">Start</button><button
+                        class="btx-blue-reverse">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
     <div class="flash-image"></div>
     <footer>
         <div>
@@ -126,6 +169,8 @@
         </div>
         <p>© 2025 Memora. All rights reserved.</p>
     </footer>
+
+
 </body>
 
 </html>

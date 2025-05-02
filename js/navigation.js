@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Navigate to Login Page
   loginButton.addEventListener("click", () => {
-    window.location.href = "../html/login.html";
+    window.location.href = "../html/SignIn.html";
   });
 
   // Navigate to SignUp Page

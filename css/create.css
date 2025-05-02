@@ -157,7 +157,7 @@ input:hover {
   align-items: center;
   gap: 2em;
 }
-.quiz input {
+#create-2 .quiz input {
   border-radius: 100px;
   border: 1px solid #fff;
   background: rgba(217, 217, 217, 0);
@@ -216,7 +216,8 @@ input:hover {
 }
 #button-holder-2 .btx-blue-reverse,
 #button-holder-2 .btx-blue,
-#button-holder-2 .btx-white ,#button-holder-2 .btx-white-reverse {
+#button-holder-2 .btx-white,
+#button-holder-2 .btx-white-reverse {
   width: 14em;
   height: 3em;
 }

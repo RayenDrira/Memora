@@ -88,3 +88,54 @@
   padding: 3em 0 0 0; /**/
   margin-bottom: 9em;
 }
+.quiz {
+  justify-self: center;
+  width: 731px;
+  gap: 2em;
+  padding: 2em;
+}
+.quiz-parameter-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7em;
+  padding-left: 2em;
+}
+.quiz-parameter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
+  padding: 0;
+}
+.quiz-parameter div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.1em;
+}
+.quiz .button-holder {
+  margin-top: 3.2em;
+  gap: 5em;
+}
+.quiz .btx-blue-reverse {
+  width: 9em;
+  height: 2.5em;
+  font-size: 1.2em;
+  text-align: center;
+}
+.quiz .btx-blue {
+  width: 9em;
+  height: 2.5em;
+  font-size: 1.2em;
+  text-align: center;
+}
+.quiz h2 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+footer {
+  margin-top: 9em;
+}
