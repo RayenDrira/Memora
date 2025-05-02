@@ -66,9 +66,6 @@
   gap: 4em;
   padding: 4em 0;
 }
-#create-2 #button-holder-2 {
-  gap: 12.5em;
-}
 /* Flashcard */
 .flashcard {
   display: flex;
@@ -83,7 +80,6 @@
   height: 30em;
   width: 21em;
   font-size: 1em;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flash-header {
@@ -113,7 +109,16 @@
   height: 9em;
   width: 16em;
 }
+/* Flashcards */
 
+.revise .question,
+.revise .answer {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 0.8em 1.2em;
+  height: 9em;
+  width: 16em;
+}
 /* Placeholder Style */
 input::placeholder,
 textarea::placeholder {
@@ -125,8 +130,8 @@ textarea::-webkit-scrollbar {
   display: none;
 }
 
-/* Animations */
-.flashcard:hover {
+.flash-front:hover,
+.flash-back:hover {
   transform: translateY(-5px);
   box-shadow: 8px 12px 16px rgba(0, 0, 0, 0.5);
 }
@@ -163,11 +168,10 @@ input:hover {
   color: #fff;
 }
 /* quiz hint */
-#button-holder-3 {
-  gap: 8em;
-}
+
 #quiz-2 {
   gap: 4em;
+  margin: 4em 0;
 }
 #quiz-2 input {
   height: 3.5em;
@@ -201,4 +205,18 @@ input:hover {
 
 #button-holder-finish {
   flex-direction: column;
+  margin-top: 4em;
+}
+#button-holder-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+#button-holder-2 .btx-blue-reverse,
+#button-holder-2 .btx-blue,
+#button-holder-2 .btx-white ,#button-holder-2 .btx-white-reverse {
+  width: 14em;
+  height: 3em;
 }

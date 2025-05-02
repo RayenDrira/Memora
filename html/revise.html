@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\css\main.css">
+    <link rel="stylesheet" href="..\css\button.css">
+    <link rel="stylesheet" href="..\css\create.css">
+    <link rel="stylesheet" href="..\css\flipper.css">
+    <link rel="icon" href="..\img\logo.png" type="image/x-icon">
+    <title>Revise</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span>
+                <img src="..\img\logo.png" alt="">
+                <h1>Memora</h1>
+            </span>
+            <span>
+                <a href="index.html">Home</a>
+                <a href="">Browse</a>
+                <a href="create.html">create</a>
+                <a href="contact.html">Contact</a>
+            </span>
+            <span>
+                <button class="btx-blue-reverse" id="login">Login</button>
+                <button class="btx-blue" id="signup">SignUp</button>
+            </span>
+        </nav>
+    </header>
+    <div class="revise">
+        <h2 class="big-title"><span class="blue">Lets</span> Revise <span class="blue">!</span></h2>
+        <div class="revise-holder">
+           
+            <div class="flip-card">
+                <div class="flip-card-inner" id="flipCard">
+                    <div class="flashcard flip-card-front">
+                        <div class="flash-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M26.617 28.1041L26.4378 28.552C23.233 29.6224 19.767 29.6224 16.5622 28.552L16.383 28.1041C16.2128 27.692 16.1268 27.4842 15.9781 27.2942C15.8312 27.1025 15.5732 26.909 15.0572 26.5238C13.2504 25.1711 11.9153 23.2841 11.241 21.1302C10.5667 18.9763 10.5874 16.6647 11.3002 14.5233C12.0131 12.3818 13.3818 10.519 15.2125 9.19891C17.0432 7.87884 19.243 7.16846 21.5 7.16846C23.757 7.16846 25.9568 7.87884 27.7875 9.19891C29.6182 10.519 30.9869 12.3818 31.6998 14.5233C32.4126 16.6647 32.4333 18.9763 31.759 21.1302C31.0847 23.2841 29.7496 25.1711 27.9428 26.5238C27.4268 26.909 27.1688 27.1025 27.0219 27.2942C26.875 27.486 26.789 27.6902 26.617 28.1041ZM17.6479 32.5474C17.8032 33.4934 17.8916 34.4478 17.9131 35.4105C17.9149 35.5377 17.9514 35.662 18.0186 35.77C18.0859 35.8779 18.1813 35.9655 18.2947 36.0232C19.2899 36.5209 20.3873 36.78 21.5 36.78C22.6127 36.78 23.7101 36.5209 24.7053 36.0232C24.8187 35.9655 24.9141 35.8779 24.9814 35.77C25.0486 35.662 25.0851 35.5377 25.0869 35.4105C25.1084 34.4478 25.1968 33.4934 25.3521 32.5474C22.8105 33.0687 20.1895 33.0687 17.6479 32.5474Z"
+                                    fill="white" />
+                            </svg>
+                            <p>Front</p>
+                            <p class="flash-number">01</p>
+                        </div>
+                        <p class="question">What does WW1 stand for?</p>
+                        <button class="btx-blue"
+                            onclick="document.getElementById('flipCard').classList.toggle('flipped')">Flip</button>
+                    </div>
+                    <div class="flashcard flip-card-back">
+                        <div class="flash-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M26.617 28.1041L26.4378 28.552C23.233 29.6224 19.767 29.6224 16.5622 28.552L16.383 28.1041C16.2128 27.692 16.1268 27.4842 15.9781 27.2942C15.8312 27.1025 15.5732 26.909 15.0572 26.5238C13.2504 25.1711 11.9153 23.2841 11.241 21.1302C10.5667 18.9763 10.5874 16.6647 11.3002 14.5233C12.0131 12.3818 13.3818 10.519 15.2125 9.19891C17.0432 7.87884 19.243 7.16846 21.5 7.16846C23.757 7.16846 25.9568 7.87884 27.7875 9.19891C29.6182 10.519 30.9869 12.3818 31.6998 14.5233C32.4126 16.6647 32.4333 18.9763 31.759 21.1302C31.0847 23.2841 29.7496 25.1711 27.9428 26.5238C27.4268 26.909 27.1688 27.1025 27.0219 27.2942C26.875 27.486 26.789 27.6902 26.617 28.1041ZM17.6479 32.5474C17.8032 33.4934 17.8916 34.4478 17.9131 35.4105C17.9149 35.5377 17.9514 35.662 18.0186 35.77C18.0859 35.8779 18.1813 35.9655 18.2947 36.0232C19.2899 36.5209 20.3873 36.78 21.5 36.78C22.6127 36.78 23.7101 36.5209 24.7053 36.0232C24.8187 35.9655 24.9141 35.8779 24.9814 35.77C25.0486 35.662 25.0851 35.5377 25.0869 35.4105C25.1084 34.4478 25.1968 33.4934 25.3521 32.5474C22.8105 33.0687 20.1895 33.0687 17.6479 32.5474Z"
+                                    fill="white" />
+                            </svg>
+                            <p>Back</p>
+                            <p class="flash-number">01</p>
+                        </div>
+                        <p class="answer">World War One</p>
+                        <button class="btx-blue"
+                            onclick="document.getElementById('flipCard').classList.toggle('flipped')">Flip</button>
+                    </div>
+                </div>
+            </div>
+
+       
+        </div>
+        <div class="revise-holder-2">
+            <button class="btx-blue-reverse">BACK</button>
+            <div class="scroll-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="32" viewBox="0 0 25 32" fill="none">
+                    <path
+                        d="M2.47108 20.0993C-0.243769 18.1011 -0.243772 14.0438 2.47108 12.0456L17.0361 1.32536C20.3378 -1.10472 25 1.25269 25 5.35221V26.7927C25 30.8922 20.3378 33.2496 17.0361 30.8196L2.47108 20.0993Z"
+                        fill="white" />
+                </svg>
+                <p class="scroll"><span id="current-number-flashcard">01</span>/ <span
+                        id="total-number-flashcard">24</span>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="32" viewBox="0 0 25 32" fill="none">
+                    <path
+                        d="M22.5289 12.0456C25.2438 14.0438 25.2438 18.1011 22.5289 20.0993L7.96387 30.8195C4.66224 33.2496 0 30.8922 0 26.7927L0 5.35219C0 1.25268 4.66223 -1.10473 7.96386 1.32535L22.5289 12.0456Z"
+                        fill="white" />
+                </svg>
+            </div>
+            <button class="btx-blue-reverse">QUIZ</button>
+        </div>
+    </div>
+
+    <div class="flash-image"></div>
+    <footer>
+        <div>
+            <div>
+                <h4>you can find us on</h4>
+                <div><img src="../img/facebook.png" alt="">
+                    <a>Facebook.com</a>
+                </div>
+                <div><img src="../img/instagram.png" alt="">
+                    <a>Instagram.com</a>
+                </div>
+                <div><img src="../img/mail.png" alt="">
+                    <a>email@domaine.com</a>
+                </div>
+            </div>
+            <div class="gap-footer">
+                <h4>Memora</h4>
+                <a href="s-index.html">Home</a>
+                <a href="shop.html">Browse</a>
+                <a href="shop.html">Create</a>
+                <a href="contact.html">contact</a>
+            </div>
+            <div class="gap-footer">
+                <h4>Categories</h4>
+                <a>History</a>
+                <a>Dinasaurs</a>
+                <a>Geography</a>
+                <a>Language</a>
+
+            </div>
+        </div>
+        <p>© 2025 Memora. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

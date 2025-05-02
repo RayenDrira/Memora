@@ -4,108 +4,181 @@ document.addEventListener("DOMContentLoaded", () => {
   // Steps
   const step1 = document.getElementById("create-1");
   const step2 = document.getElementById("create-2");
-  const quiz1 = document.getElementById("quiz-1");
-  const quiz2 = document.getElementById("quiz-2");
 
-  // Button holders
-  const buttonHolder2 = document.getElementById("button-holder-2");
-  const buttonHolder3 = document.getElementById("button-holder-3");
-  const buttonHolderFinish = document.getElementById("button-holder-finish");
+  // Metadata inputs (create-1)
+  const titleInput = document.getElementById("title-input");
+  const categoryInput = document.getElementById("categorie-input");
+  const descriptionInput = document.getElementById("description-input");
 
-  // Next Buttons
+  // Flashcard inputs (create-2)
+  const questionInput = document.getElementById("question-input");
+  const answerInput = document.getElementById("answer-input");
+  const correctOptionInput = document.getElementById("correct-option");
+  const wrongOption1Input = document.getElementById("wrong-option-1");
+  const wrongOption2Input = document.getElementById("wrong-option-2");
+  const wrongOption3Input = document.getElementById("wrong-option-3");
+  const hintInput = document.getElementById("hint");
+
+  // Buttons
   const nextButton1 = document.getElementById("next-button-1");
-  const nextButton2 = document.getElementById("next-button-2");
-  const nextButton3 = document.getElementById("next-button-3");
-  const nextButton4 = document.getElementById("next-button-4");
-  const nextButton5 = document.getElementById("next-button-5");
-  const finishButton = document.getElementById("finish-button");
-  // Back Buttons
-  const backButton1 = document.getElementById("back-button-1");
+  const addFlashcardButton = document.getElementById("add-falshcard");
   const backButton2 = document.getElementById("back-button-2");
-  const backButton3 = document.getElementById("back-button-3");
-  const backButton4 = document.getElementById("back-button-4");
+  const nextButton2 = document.getElementById("next-button-2");
 
   // Flashcard number
   const flashNumberElements = document.querySelectorAll(".flash-number");
   let flashNumber = 1; // Initial flashcard number
 
+  // Data storage
+  const metadata = {}; // Object to store metadata (title, category, description)
+  const flashcards = []; // Array to store flashcard data
+  let currentFlashcardIndex = 0; // Tracks the current flashcard being edited
+
   // Initialize step visibility
-  step1.style.display = "flex";
-  step2.style.display = "none";
-  quiz1.style.display = "none";
-  quiz2.style.display = "none";
-  buttonHolderFinish.style.display = "none";
+  step1.style.display = "flex"; // Show create-1 initially
+  step2.style.display = "none"; // Hide create-2 initially
 
   // Step 1 -> Step 2
   nextButton1.addEventListener("click", (e) => {
     e.preventDefault();
+
+    // Basic validation
+    if (!titleInput.value || !categoryInput.value || !descriptionInput.value) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    // Save metadata
+    metadata.title = titleInput.value;
+    metadata.category = categoryInput.value;
+    metadata.description = descriptionInput.value;
+
+    // Navigate to create-2
     step1.style.display = "none";
     step2.style.display = "block";
-    buttonHolder2.style.display = "flex";
   });
-  // Step 2 -> Step 1
+
+  // Add or update current flashcard, then go to next
+  addFlashcardButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (
+      !questionInput.value ||
+      !answerInput.value ||
+      !correctOptionInput.value ||
+      !wrongOption1Input.value ||
+      !wrongOption2Input.value ||
+      !wrongOption3Input.value ||
+      !hintInput.value
+    ) {
+      alert("Please fill out all flashcard fields.");
+      return;
+    }
+
+    const currentFlashcard = {
+      question: questionInput.value,
+      answer: answerInput.value,
+      quiz: {
+        correctOption: correctOptionInput.value,
+        wrongOption1: wrongOption1Input.value,
+        wrongOption2: wrongOption2Input.value,
+        wrongOption3: wrongOption3Input.value,
+      },
+      hint: hintInput.value,
+    };
+
+    // Update or add
+    if (flashcards[currentFlashcardIndex]) {
+      flashcards[currentFlashcardIndex] = currentFlashcard;
+    } else {
+      flashcards.push(currentFlashcard);
+    }
+
+    currentFlashcardIndex++;
+
+    if (flashcards[currentFlashcardIndex]) {
+      // Editing existing flashcard
+      const nextCard = flashcards[currentFlashcardIndex];
+      questionInput.value = nextCard.question;
+      answerInput.value = nextCard.answer;
+      correctOptionInput.value = nextCard.quiz.correctOption;
+      wrongOption1Input.value = nextCard.quiz.wrongOption1;
+      wrongOption2Input.value = nextCard.quiz.wrongOption2;
+      wrongOption3Input.value = nextCard.quiz.wrongOption3;
+      hintInput.value = nextCard.hint;
+    } else {
+      // Blank new flashcard
+      questionInput.value = "";
+      answerInput.value = "";
+      correctOptionInput.value = "";
+      wrongOption1Input.value = "";
+      wrongOption2Input.value = "";
+      wrongOption3Input.value = "";
+      hintInput.value = "";
+    }
+
+    // Update flashcard number display
+    flashNumber = currentFlashcardIndex + 1;
+    flashNumberElements.forEach((el) => {
+      el.textContent = flashNumber.toString().padStart(2, "0");
+    });
+  });
+
+  // Go back to previous flashcard or metadata
   backButton2.addEventListener("click", (e) => {
     e.preventDefault();
-    step1.style.display = "flex";
-    step2.style.display = "none";
-    buttonHolder2.style.display = "none";
+
+    if (currentFlashcardIndex > 0) {
+      currentFlashcardIndex--;
+
+      const previous = flashcards[currentFlashcardIndex];
+      questionInput.value = previous.question;
+      answerInput.value = previous.answer;
+      correctOptionInput.value = previous.quiz.correctOption;
+      wrongOption1Input.value = previous.quiz.wrongOption1;
+      wrongOption2Input.value = previous.quiz.wrongOption2;
+      wrongOption3Input.value = previous.quiz.wrongOption3;
+      hintInput.value = previous.hint;
+
+      flashNumber = currentFlashcardIndex + 1;
+      flashNumberElements.forEach((el) => {
+        el.textContent = flashNumber.toString().padStart(2, "0");
+      });
+    } else {
+      // Back to metadata step
+      step2.style.display = "none";
+      step1.style.display = "flex";
+
+      // Restore metadata fields
+      titleInput.value = metadata.title || "";
+      categoryInput.value = metadata.category || "";
+      descriptionInput.value = metadata.description || "";
+    }
   });
 
-  // Step 2 -> Quiz 1
+  // Go forward to the next flashcard
   nextButton2.addEventListener("click", (e) => {
     e.preventDefault();
-    quiz1.style.display = "flex";
-    buttonHolder2.style.display = "none";
-    buttonHolder3.style.display = "flex";
-  });
-  // Quiz 1 -> Step 2
-  backButton3.addEventListener("click", (e) => {
-    e.preventDefault();
-    quiz1.style.display = "none";
-    buttonHolder2.style.display = "flex";
-    buttonHolder3.style.display = "none";
-  });
 
-  /////quiz 1 -> Quiz 2
-  nextButton3.addEventListener("click", (e) => {
-    e.preventDefault();
-    quiz1.style.display = "none";
-    quiz2.style.display = "flex";
-    buttonHolder3.style.display = "none";
-  });
-  // Quiz 2 -> Quiz 1
-  backButton4.addEventListener("click", (e) => {
-    e.preventDefault();
-    quiz1.style.display = "flex";
-    quiz2.style.display = "none";
-    buttonHolder3.style.display = "flex";
-  });
+    if (currentFlashcardIndex < flashcards.length - 1) {
+      currentFlashcardIndex++;
 
-  // Quiz 2 -> Finish
-  nextButton4.addEventListener("click", (e) => {
-    e.preventDefault();
-    quiz2.style.display = "none";
-    buttonHolderFinish.style.display = "flex";
-  });
+      const nextCard = flashcards[currentFlashcardIndex];
+      questionInput.value = nextCard.question;
+      answerInput.value = nextCard.answer;
+      correctOptionInput.value = nextCard.quiz.correctOption;
+      wrongOption1Input.value = nextCard.quiz.wrongOption1;
+      wrongOption2Input.value = nextCard.quiz.wrongOption2;
+      wrongOption3Input.value = nextCard.quiz.wrongOption3;
+      hintInput.value = nextCard.hint;
 
-  // Add one more flashcard
-  nextButton5.addEventListener("click", (e) => {
-    e.preventDefault();
-    flashNumber++; // Increment flashcard number
-    flashNumberElements.forEach((element) => {
-      element.textContent = flashNumber.toString().padStart(2, "0"); // Update flash-number
-    });
-    step2.style.display = "block";
-    quiz1.style.display = "none";
-    quiz2.style.display = "none";
-    buttonHolder2.style.display = "flex";
-    buttonHolderFinish.style.display = "none";
-  });
-
-  // Finish button functionality
-  finishButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    alert("Flashcard creation complete! Your flashcards have been saved.");
-    location.reload(); // Reload to restart the process cleanly
+      flashNumber = currentFlashcardIndex + 1;
+      flashNumberElements.forEach((el) => {
+        el.textContent = flashNumber.toString().padStart(2, "0");
+      });
+    } else {
+      alert("You are already on the latest flashcard.");
+    }
   });
 });

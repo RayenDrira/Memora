@@ -1,0 +1,34 @@
+.content {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.categories {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 1.1em 6em;
+  background-color: transparent;
+  border-top: 0.5px solid #0f2438;
+  margin: 0 10px;
+}
+.categories nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.categories span {
+  align-items: center;
+}
+.categories a {
+  margin: 0 2em;
+  font-size: 1.1em;
+}
+.categories a:hover {
+  color: #31c1e1;
+  transition: 0.8s;
+}
