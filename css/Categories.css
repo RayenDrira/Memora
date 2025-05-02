@@ -46,11 +46,15 @@
   min-height: 150%;
   z-index: -1;
 }
-.main-content-row svg path{
-  fill:#0f2438;
-  transition:0.8s ease-in-out;
+.main-content-row svg path {
+  fill: #0f2438;
+  transition: 0.8s ease-in-out;
 }
-.main-content-row button:hover svg path{
-  fill:#31c1e1;
-  transition:0.8s ease-in-out;
+.main-content-row button:hover svg path {
+  fill: #31c1e1;
+  transition: 0.8s ease-in-out;
+}
+
+h2 {
+  padding-top: 1em;
 }

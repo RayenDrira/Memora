@@ -1,5 +1,29 @@
 window.addEventListener("DOMContentLoaded", () => {
-    // Get references
+    const quizButton = document.getElementById("quiz-button");
+    const backButton = document.getElementById("back-button");
+    const cancelButton = document.getElementById("cancel-button");
+    const quizContainer = document.getElementById("quiz-container");
+    const reviseDiv = document.querySelector(".revise");
+
+    // Show the quiz container and hide other content
+    quizButton.addEventListener("click", () => {
+        quizContainer.style.display = "block";
+        reviseDiv.style.display = "none";
+    });
+
+   // Navigate back to the previous page
+   backButton.addEventListener("click", () => {
+    history.back();
+});
+
+    // Cancel button also hides the quiz container
+    cancelButton.addEventListener("click", () => {
+        quizContainer.style.display = "none";
+        reviseDiv.style.display = "block";
+    });
+    
+    
+    // Get references for quiz content elements
     const levelRadios = document.querySelectorAll('input[name="quiz-level"]');
     const hint = document.getElementById("quiz-type-hint");
     const timer = document.getElementById("quiz-type-timer");

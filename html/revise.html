@@ -76,15 +76,14 @@
 
         </div>
         <div class="revise-holder-2">
-            <button class="btx-blue-reverse">BACK</button>
+            <button class="btx-blue-reverse" id="back-button">BACK</button>
             <div class="scroll-holder">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="32" viewBox="0 0 25 32" fill="none">
                     <path
                         d="M2.47108 20.0993C-0.243769 18.1011 -0.243772 14.0438 2.47108 12.0456L17.0361 1.32536C20.3378 -1.10472 25 1.25269 25 5.35221V26.7927C25 30.8922 20.3378 33.2496 17.0361 30.8196L2.47108 20.0993Z"
                         fill="white" />
                 </svg>
-                <p class="scroll"><span id="current-number-flashcard">01</span>/ <span
-                        id="total-number-flashcard">24</span>
+                <p class="scroll"><span id="current-number-flashcard">01</span>/ <span id="total-number-flashcard">24</span>
                 </p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="32" viewBox="0 0 25 32" fill="none">
                     <path
@@ -92,10 +91,10 @@
                         fill="white" />
                 </svg>
             </div>
-            <button class="btx-blue-reverse">QUIZ</button>
+            <button class="btx-blue-reverse" id="quiz-button">QUIZ</button>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="quiz-container" style="display: none;">
         <form action="" method="POST">
             <div class="quiz">
                 <h2 class="medium-title"><span class="blue">Quiz </span>Parameters</h2>
@@ -130,8 +129,8 @@
                     </div>
                 </div>
                 <div class="button-holder">
-                    <button class="btx-blue" type="submit">Start</button><button
-                        class="btx-blue-reverse">Cancel</button>
+                    <button class="btx-blue" type="submit">Start</button>
+                    <button class="btx-blue-reverse" id="cancel-button" type="button">Cancel</button>
                 </div>
             </div>
         </form>
