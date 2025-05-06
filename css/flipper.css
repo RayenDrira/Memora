@@ -85,7 +85,7 @@
   justify-content: center;
   align-items: center;
   gap: 7.6em;
-  padding: 3em 0 0 0; /**/
+  padding: 2em 0 0 0; /**/
   margin-bottom: 9em;
 }
 .quiz {
@@ -145,7 +145,7 @@ footer {
 
 #flash-header-1 {
   justify-content: center;
-  height: 4em;
+  height: 3.8em;
 }
 #quiz-execute {
   padding-top: 3em;
@@ -156,7 +156,8 @@ footer {
 }
 
 #quiz-execute .flash-group {
-  padding: 2em 0 0 0;
+  padding: 0;
+  margin: 2em 0 0 0;
 }
 #flashcard-quiz {
   gap: 2em;
@@ -174,12 +175,12 @@ footer {
 }
 #quiz-execute .revise-holder-2 {
   gap: 2.6em;
-  height: fit-content;
+  
 }
 #quiz-execute .scroll-holder {
   justify-content: center;
   width: 12.5em;
-  height: 2.7em;
+  height: 2.5em;
   font-size: 1.1em;
 }
 #quiz-execute .scroll {
@@ -215,11 +216,11 @@ footer {
   margin: 0;
   padding-top: 2.5em;
 }
-#quiz-result .btx-white-reverse, #quiz-result .btx-blue{
+#quiz-result .btx-white-reverse,
+#quiz-result .btx-blue {
   width: 11em;
   height: 2.5em;
   font-size: 1.2em;
-
 }
 /* Score bprogress bar animation */
 /* Outer circle with conic-gradient progress and animation */
