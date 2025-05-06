@@ -86,9 +86,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 1em;
+  padding: 0.4em 1em;
   width: 100%;
   border-bottom: #fff solid 2px;
+  font-size: 1.1em;
+  font-weight: 500;
 }
 
 .flash-number {
@@ -111,13 +113,14 @@
 }
 /* Flashcards */
 
-.revise .question,
-.revise .answer {
+.question,
+.answer {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.4em;
   padding: 0.8em 1.2em;
   height: 9em;
-  width: 16em;
+  width: 100%;
+  line-height: 1.7em;
 }
 /* Placeholder Style */
 input::placeholder,

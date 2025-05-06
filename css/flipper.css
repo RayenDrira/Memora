@@ -142,3 +142,123 @@ footer {
 #quiz-container {
   margin-top: 7.8em;
 }
+
+#flash-header-1 {
+  justify-content: center;
+  height: 4em;
+}
+#quiz-execute {
+  padding-top: 3em;
+}
+#quiz-execute .flip-card-front,
+#quiz-execute .flip-card-back {
+  gap: 4em;
+}
+
+#quiz-execute .flash-group {
+  padding: 2em 0 0 0;
+}
+#flashcard-quiz {
+  gap: 2em;
+}
+#flashcard-quiz .btx-white-reverse {
+  width: 80%;
+  height: 3.3em;
+}
+#quiz-execute .btx-blue-reverse {
+  height: 2.85em;
+  width: 10.1em;
+  font-weight: 500;
+  font-size: 1.3em;
+  border-width: 2px;
+}
+#quiz-execute .revise-holder-2 {
+  gap: 2.6em;
+  height: fit-content;
+}
+#quiz-execute .scroll-holder {
+  justify-content: center;
+  width: 12.5em;
+  height: 2.7em;
+  font-size: 1.1em;
+}
+#quiz-execute .scroll {
+  font-size: 1em;
+  font-weight: 500;
+}
+.quiz-result-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8em;
+}
+.quiz-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  padding: 0;
+  padding-left: 1em;
+}
+.quiz-result-holder .quiz-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+#quiz-result h2 {
+  margin: 0;
+  padding-bottom: 1em;
+}
+#quiz-result .button-holder {
+  margin: 0;
+  padding-top: 2.5em;
+}
+#quiz-result .btx-white-reverse, #quiz-result .btx-blue{
+  width: 11em;
+  height: 2.5em;
+  font-size: 1.2em;
+
+}
+/* Score bprogress bar animation */
+/* Outer circle with conic-gradient progress and animation */
+.score-holder-out {
+  width: 233px;
+  height: 233px;
+  border-radius: 50%;
+  background: conic-gradient(#31c1e1 0%, white 0%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: fillProgress 2s forwards ease-out;
+}
+
+/* Inner circle (background center) */
+.score-holder-in {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: #0f2438;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Score text */
+.score {
+  font-size: 4.45em;
+  font-weight: 500;
+  color: #31c1e1;
+}
+
+/* Animation Keyframes */
+@keyframes fillProgress {
+  from {
+    background: conic-gradient(#31c1e1 0%, white 0%);
+  }
+  to {
+    background: conic-gradient(#31c1e1 80%, white 0%);
+  }
+}
