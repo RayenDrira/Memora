@@ -80,7 +80,7 @@ header h1 {
   background-clip: text;
   color: hsla(0, 0%, 0%, 0);
 }
-header #guest-header,header #user-header {
+header #user-header {
   display: flex;
   align-items: center;
   gap: 1em;
@@ -278,4 +278,8 @@ footer > p {
   padding: 1.2em;
   padding-top: 0;
   color: #fff;
+}
+
+.profile-logo {
+  cursor: pointer;
 }

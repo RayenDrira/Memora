@@ -1,0 +1,48 @@
+.flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.flash-overlay.active {
+  opacity: 1;
+}
+.hint {
+  display: none;
+  position: absolute;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  bottom: 15px;
+  font-size: 14px;
+}
+.hint-trigger:hover + .hint {
+  display: block;
+}
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+}
+#timer-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 5px;
+}
+.btx-white-reverse {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.quiz {
+  margin-top: 5em;
+}
