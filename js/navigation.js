@@ -1,19 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Buttons
-  const loginButton = document.getElementById("login");
-  const signupButton = document.getElementById("signup");
   const getStartedButton = document.getElementById("get-started");
   const contactButton = document.getElementById("contact");
   const categoryButtons = document.querySelectorAll(".main-content-row button");
+  const loginButton = document.getElementById("login");
 
   // Navigate to Login Page
   loginButton.addEventListener("click", () => {
-    window.location.href = "../html/SignIn.html";
-  });
-
-  // Navigate to SignUp Page
-  signupButton.addEventListener("click", () => {
-    window.location.href = "../html/signup.html";
+    window.location.href = "../html/signin.html";
   });
 
   // Navigate to Browse Page (Get Started)

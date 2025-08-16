@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="..\css\main.css">
     <link rel="stylesheet" href="..\css\button.css">
     <script src="..\js\navigation.js"></script>
+
     <link rel="icon" href="..\img\logo.png" type="image/x-icon">
     <script src="..\js\navigation.js"></script>
 
@@ -22,9 +23,9 @@
             </span>
             <span>
                 <a href="index.html">Home</a>
-                <a href="browse.html">Browse</a>
-                <a href="create.html">create</a>
-                <a href="contact.html">Contact</a>
+                <a href="signin.html">Browse</a>
+                <a href="signin.html">create</a>
+                <a href="signin.html">Contact</a>
             </span>
             <span>
                 <button class="btx-blue-reverse" id="login">Login</button>
@@ -181,21 +182,46 @@
             </div>
             <div class="gap-footer">
                 <h4>Memora</h4>
-                <a href="s-index.html">Home</a>
-                <a href="shop.html">Browse</a>
-                <a href="shop.html">Create</a>
-                <a href="contact.html">contact</a>
+                <a href="signin.html">Home</a>
+                <a href="signin.html">Browse</a>
+                <a href="signin.html">Create</a>
+                <a href="signin.html">contact</a>
             </div>
             <div class="gap-footer">
                 <h4>Categories</h4>
-                <a>History</a>
-                <a>Dinasaurs</a>
-                <a>Geography</a>
-                <a>Language</a>
+                <a href="#">History</a>
+                <a href="">Geography</a>
+                <a href="">Language</a>
+                <a href="">Science</a>
+                <a href="">Literature</a>
             </div>
         </div>
         <p>© 2025 Memora. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginButton = document.getElementById('get-started');
+            const signupButton = document.getElementById('signup');
+            const contactButton = document.getElementById('contact');
+            const seeMoreButtons = document.getElementsByClassName('btx-blue-blue');
+            Array.from(seeMoreButtons).forEach(function (button) {
+                button.addEventListener('click', function () {
+                    window.location.href = 'signin.html';
+                });
+            });
+
+            loginButton.addEventListener('click', function () {
+                window.location.href = 'signin.html';
+            });
+
+            signupButton.addEventListener('click', function () {
+                window.location.href = 'signup.html';
+            });
+            contactButton.addEventListener('click', function () {
+                window.location.href = 'signin.html';
+            });
+        });
+    </script>
 </body>
 
 </html>

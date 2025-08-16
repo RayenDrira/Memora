@@ -1,3 +1,46 @@
+<?php
+session_start(); // Start the session at the very beginning 
+
+require '../php/connexion.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>
+            alert('You must be logged in to access this page.');
+            window.location.href = 'signin.html';
+          </script>";
+    exit();
+}
+
+// Check if the user is a creator
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT creator FROM users WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    if ($user['creator'] != 1) {
+        echo "<script>
+                alert('You do not have permission to access this page.');
+                window.location.href = 's-index.php';
+              </script>";
+        exit();
+    }
+} else {
+    echo "<script>
+            alert('User not found.');
+            window.location.href = 'signin.html';
+          </script>";
+    exit();
+}
+
+// Close the database connection
+$stmt->close();
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +52,7 @@
     <link rel="stylesheet" href="..\css\create.css">
     <script src="../js/create.js"></script>
     <script src="..\js\navigation.js"></script>
+    <script src=..\js\logout.js></script>
     <link rel="icon" href="..\img\logo.png" type="image/x-icon">
     <title>Create</title>
 </head>
@@ -20,15 +64,29 @@
                 <img src="..\img\logo.png" alt="">
                 <h1>Memora</h1>
             </span>
-            <span>
-                <a href="index.html">Home</a>
-                <a href="browse.html">Browse</a>
-                <a href="create.html">create</a>
-                <a href="contact.html">Contact</a>
+            <span style="padding-right:110px;">
+                <a href="s-index.php">Home</a>
+                <a href="browse.php">Browse</a>
+                <a href="create.php">create</a>
+                <a href="contact.html">Become Creator</a>
             </span>
-            <span>
-                <button class="btx-blue-reverse" id="login">Login</button>
-                <button class="btx-blue" id="signup">SignUp</button>
+            <span id="user-header">
+                <svg onclick="handleLogout()" class="profile-logo" xmlns="http://www.w3.org/2000/svg" width="42"
+                    height="40" viewBox="0 0 42 40" fill="none">
+                    <g clip-path="url(#clip0_121_715)">
+                        <path
+                            d="M28.2639 17.5C28.2639 21.65 24.8208 25 20.5556 25C16.2903 25 12.8472 21.65 12.8472 17.5C12.8472 13.35 16.2903 10 20.5556 10C24.8208 10 28.2639 13.35 28.2639 17.5Z"
+                            fill="#31C1E1" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M41.1111 20C41.1111 31.05 31.9125 40 20.5556 40C9.19861 40 0 31.05 0 20C0 8.95 9.19861 0 20.5556 0C31.9125 0 41.1111 8.95 41.1111 20ZM10.2778 34.375C10.6889 33.71 14.6715 27.5 20.5299 27.5C26.3625 27.5 30.3708 33.725 30.7819 34.375C33.1712 32.7675 35.1234 30.6193 36.4706 28.1153C37.8178 25.6113 38.5197 22.8264 38.516 20C38.516 10.325 30.4736 2.5 20.5299 2.5C10.5861 2.5 2.54375 10.325 2.54375 20C2.54375 25.95 5.60139 31.225 10.2778 34.375Z"
+                            fill="#31C1E1" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_121_715">
+                            <rect width="41.1111" height="40" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
             </span>
         </nav>
     </header>
@@ -36,22 +94,20 @@
         <h2 class="big-title"><span class="blue">Flash</span>card <span class="blue">Set </span>Buil<span
                 class="blue">der</span></h2>
         <div class="container">
-            <form action="" method="POST">
+            <form action="../php/create-set.php" method="POST">
                 <div id="create-1">
                     <input type="text" id="title-input" name="title-input"
                         placeholder="Enter a title, like “WW1 -chapter 1: Reasons and motives ”" required>
                     <select class="custom-select" name="categorie-input" id="categorie-input" required>
-                        <option value="History">History</option>
-                        <option value="Geography">Geography</option>
-                        <option value="Math">Math</option>
-                        <option value="Science">Science</option>
-                        <option value="Language">Language</option>
-                        <option value="Art">Art</option>
-                        <option value="Music">Music</option>
-                        <option value="Literature">Literature</option>
-                        <option value="Technology">Technology</option>
-                        <option value="Health">Health</option>
-                        <option value="Sports">Sports</option>
+                        <option value="1">History</option>
+                        <option value="2">Geography</option>
+                        <option value="3">Math</option>
+                        <option value="4">Science</option>
+                        <option value="5">Language</option>
+                        <option value="6">Art</option>
+                        <option value="7">Music</option>
+                        <option value="8">Literature</option>
+                        <option value="9">Technology</option>
                     </select>
                     <input type="text" id="description-input" name="description-input"
                         placeholder="Add a description...">
@@ -75,7 +131,7 @@
                             </div>
                             <textarea id="question-input" name="question-input" placeholder="Add a question..."
                                 required></textarea>
-                          
+
                         </div>
                         <div class="flashcard flash-back">
                             <div class="flash-header">
@@ -90,7 +146,7 @@
                             </div>
                             <textarea id="answer-input" name="answer-input" placeholder="Add an answer..."
                                 required></textarea>
-                            
+
                         </div>
                     </div>
 
@@ -145,9 +201,8 @@
 
             </form>
         </div>
-
+        <div class="flash-image"></div>
     </div>
-    <div class="flash-image"></div>
     <footer>
         <div>
             <div>
@@ -165,17 +220,17 @@
             <div class="gap-footer">
                 <h4>Memora</h4>
                 <a href="s-index.html">Home</a>
-                <a href="shop.html">Browse</a>
-                <a href="shop.html">Create</a>
+                <a href="browse.html">Browse</a>
+                <a href="create.html">Create</a>
                 <a href="contact.html">contact</a>
             </div>
             <div class="gap-footer">
                 <h4>Categories</h4>
-                <a>History</a>
-                <a>Dinasaurs</a>
-                <a>Geography</a>
-                <a>Language</a>
-
+                <a href="#">History</a>
+                <a href="">Geography</a>
+                <a href="">Language</a>
+                <a href="">Science</a>
+                <a href="">Literature</a>
             </div>
         </div>
         <p>© 2025 Memora. All rights reserved.</p>

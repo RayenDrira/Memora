@@ -181,4 +181,69 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("You are already on the latest flashcard.");
     }
   });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Collect metadata
+    const metadata = {
+      title: titleInput.value,
+      category: categoryInput.value,
+      description: descriptionInput.value,
+    };
+
+    // Validate metadata
+    if (!metadata.title || !metadata.category || !metadata.description) {
+      alert("Please fill out all metadata fields.");
+      return;
+    }
+
+    // Validate and add the current flashcard to the array
+    if (
+      questionInput.value &&
+      answerInput.value &&
+      correctOptionInput.value &&
+      wrongOption1Input.value &&
+      wrongOption2Input.value &&
+      wrongOption3Input.value &&
+      hintInput.value
+    ) {
+      const currentFlashcard = {
+        question: questionInput.value,
+        answer: answerInput.value,
+        quiz: {
+          correctOption: correctOptionInput.value,
+          wrongOption1: wrongOption1Input.value,
+          wrongOption2: wrongOption2Input.value,
+          wrongOption3: wrongOption3Input.value,
+        },
+        hint: hintInput.value,
+      };
+
+      // Add or update the current flashcard in the array
+      if (flashcards[currentFlashcardIndex]) {
+        flashcards[currentFlashcardIndex] = currentFlashcard;
+      } else {
+        flashcards.push(currentFlashcard);
+      }
+    } else {
+      alert("Please fill out all flashcard fields before finishing.");
+      return;
+    }
+
+    // Add metadata and flashcards as a hidden input
+    const data = {
+      metadata,
+      flashcards,
+    };
+
+    const dataInput = document.createElement("input");
+    dataInput.type = "hidden";
+    dataInput.name = "data";
+    dataInput.value = JSON.stringify(data); // Convert metadata and flashcards to JSON
+    form.appendChild(dataInput);
+
+    // Submit the form
+    form.submit();
+  });
 });
